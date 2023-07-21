@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 16:32:48 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/07/20 19:05:33 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/07/20 19:41:39 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/07/21 14:17:10 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #ifdef PHONEBOOK_H
-// # define PHONEBOOK_H
+#include "Zombie.hpp"
 
-#include <iostream>
-#include "Contact.hpp"
-
-class Phonebook
+int main()
 {
-private:
-	Contact contact_list[8];
-	int		n_contacts;
+	Zombie*	zombie = zombieHorde(3, "Foo");
 	
-public:
-	Phonebook(/* args */) : n_contacts(0){};
-	void	add(Contact& Contact);
-	void	search(std::string& contact);
-	// ~Phonebook();
-};
+	delete[] zombie;
 
-// #endif
+	return (0);
+}
