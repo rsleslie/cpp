@@ -6,7 +6,7 @@
 #    By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/20 15:43:07 by rleslie-          #+#    #+#              #
-#    Updated: 2023/07/20 19:43:43 by rleslie-         ###   ########.fr        #
+#    Updated: 2023/10/03 18:30:32 by rleslie-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean re
+re: fclean all
 
 .PHONY: all fclean clean re

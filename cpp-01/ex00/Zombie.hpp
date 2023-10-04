@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 19:43:00 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/07/21 14:25:28 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:20:43 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie{
 	private:
 		std::string name;
-		
+
 	public:
 		Zombie();
 		void	announce(void);

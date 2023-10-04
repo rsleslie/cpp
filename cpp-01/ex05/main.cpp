@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radomChump.cpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 15:31:56 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/03 18:16:02 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/10/03 21:22:43 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/10/03 22:59:49 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include "Harl.hpp"
 
-void	randomChump(std::string name)
+int main(void)
 {
-	Zombie zombie;
+	Harl harl;
 
-	zombie.setName(name);
-	zombie.announce();
+	harl.complain("DEBUG");
+	// harl.complain("INFO");
+	// harl.complain("WAARNING");
+	// harl.complain("ERROR");
+	return (0);
 }

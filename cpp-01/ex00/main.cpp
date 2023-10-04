@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 12:33:11 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/07/21 14:30:58 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:17:00 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int main()
 {
-	Zombie *zombie= newZombie("Foo");
-	randomChump("Foo_2");
+	Zombie *zombie;
 
+	zombie = newZombie("Foo");
+	randomChump("Foo_2");
 	delete zombie;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 19:41:39 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/07/21 14:17:10 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:35:22 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main()
 {
-	Zombie*	zombie = zombieHorde(3, "Foo");
+	Zombie*	zombie;
 	
+	zombie = zombieHorde(3, "Foo");
 	delete[] zombie;
-
 	return (0);
 }

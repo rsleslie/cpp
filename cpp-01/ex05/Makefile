@@ -5,23 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/16 15:31:41 by rleslie-          #+#    #+#              #
-#    Updated: 2023/10/02 17:19:24 by rleslie-         ###   ########.fr        #
+#    Created: 2023/10/03 21:24:01 by rleslie-          #+#    #+#              #
+#    Updated: 2023/10/03 21:24:26 by rleslie-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
-SRCS	=	megaphone.cpp
-OBJS	=	$(addprefix objects/, $(notdir $(SRCS:.cpp=.o)))
-FLAGS	=	-Wall -Wextra -Werror -g -std=c++98
-CC 		=	c++
+NAME	= ex05
+SRCS	= main.cpp Harl.cpp
+CC		= c++
+FLAGS	= -Wall -Wextra -Werror -g -std=c++98
+OBJS	= $(addprefix objects/, $(notdir $(SRCS:.cpp=.o)))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-objects:
+objects: 
 	mkdir -p objects
 
 objects/%.o: %.cpp | objects
@@ -30,13 +30,12 @@ objects/%.o: %.cpp | objects
 run: all
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 
-clean: 
-		rm -rf objects
+clean:
+	rm -rf objects
 
-fclean:
-		rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-	

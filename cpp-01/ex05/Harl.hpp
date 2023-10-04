@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radomChump.cpp                                     :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 15:31:56 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/03 18:16:02 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/10/03 21:07:25 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/10/03 21:11:13 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-void	randomChump(std::string name)
+#include <iostream>
+
+class Harl
 {
-	Zombie zombie;
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+		
+	public:
+		Harl(void);
+		void	complain(std::string level);
+		~Harl(void);
+};
 
-	zombie.setName(name);
-	zombie.announce();
-}
+#endif
