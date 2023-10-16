@@ -6,11 +6,11 @@
 #    By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 12:53:24 by rleslie-          #+#    #+#              #
-#    Updated: 2023/10/12 16:08:06 by rleslie-         ###   ########.fr        #
+#    Updated: 2023/10/12 16:08:21 by rleslie-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex01
+NAME	= ex02
 SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS	= $(addprefix objects/, $(notdir $(SRCS:.cpp=.o)))
 FLAGS	= -Wall -Wextra -Werror -g -std=c++98
