@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:45:25 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 16:24:34 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:39:47 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ int main() {
   
     Bureaucrat bureaucrat("Alice", 30);
 
-    // ssinatura 145 e grau de execução 137
     ShrubberyCreationForm shrubberyForm("Garden");
 
-    // ssinatura 72 e grau de execução 45
     RobotomyRequestForm robotomyForm("Bender");
 
-    // 25 e grau de execução 5
     PresidentialPardonForm pardonForm("Zoidberg");
 
     try 
