@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:57:28 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 10:29:25 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:34:06 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,24 @@
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm {
-    private:
-        const std::string target;
+	private:
+		const std::string target;
 
-    public:
-        PresidentialPardonForm(const std::string &target);
-        PresidentialPardonForm(const PresidentialPardonForm &other);
-        ~PresidentialPardonForm();
+	public:
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(const std::string &target);
+		PresidentialPardonForm(const PresidentialPardonForm &other);
+		~PresidentialPardonForm();
 
-        PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 
-        class FormNotSignedException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return "Form is not signed.";
-                }
-        };
+		class FormNotSignedException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
 
-        void execute(const Bureaucrat &executor) const;
-        std::string getTarget(void) const;
+		void execute(const Bureaucrat &executor) const;
+		std::string getTarget(void) const;
 };
 
 #endif

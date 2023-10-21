@@ -6,12 +6,14 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 10:03:27 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 10:37:41 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:33:07 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
+
+ShrubberyCreationForm::ShrubberyCreationForm(void){}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(target, 145, 137) {}
 
@@ -28,7 +30,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-    if (getIsSigned()) {
+    if (!getIsSigned()) {
         throw FormNotSignedException();
     }
 
@@ -53,4 +55,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 
 std::string ShrubberyCreationForm::getTarget(void) const{
     return target;
+}
+
+const char* ShrubberyCreationForm::FormNotSignedException::what() const throw(){
+	return "Form is not signed.";
 }

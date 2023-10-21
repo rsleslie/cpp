@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 22:45:25 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/18 15:39:19 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 15:05:45 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main() {
         Bureaucrat bureaucrat2("Alice", 140);
 
         Form form1("Form1", 1, 120);
-        Form form2("Form2", 145, 15);
+        Form form2("Form2", 145, 15)
 
 		std::cout <<  blue;
         bureaucrat1.signForm(form1);

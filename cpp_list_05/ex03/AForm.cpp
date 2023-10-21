@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:52:31 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/20 20:55:16 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:40:20 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void AForm::beSigned(const Bureaucrat& bureaucrat) {
     if (bureaucrat.getGrade() <= signGrade) {
         isSigned = true;
     } else {
+		isSigned = false;
         throw GradeTooLowException();
     }
 }

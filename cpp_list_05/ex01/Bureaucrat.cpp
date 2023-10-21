@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:47:19 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/18 15:30:19 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:25:56 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ void Bureaucrat::signForm(Form& form) const{
 	}catch (const std::exception& e){
 		std::cout << name << "  couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
 	}
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw(){
+	return "Grade Too High!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw(){
+	return "Grade Too Low!";
 }

@@ -6,11 +6,13 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:57:24 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 10:36:58 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:34:18 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm(void) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm(target, 25, 5) {}
 
@@ -31,7 +33,7 @@ std::string PresidentialPardonForm::getTarget(void) const{
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-    if (getIsSigned()) {
+    if (!getIsSigned()) {
         throw FormNotSignedException();
     }
 
@@ -40,4 +42,8 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
     }
 
     std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+}
+
+const char* PresidentialPardonForm::FormNotSignedException::what() const throw(){
+	return "Form is not signed.";
 }

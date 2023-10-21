@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:47:19 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/17 21:52:27 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:21:25 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ Bureaucrat::Bureaucrat(const std::string n, int g) : name(n){
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {}
 
 Bureaucrat::~Bureaucrat(void){}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw(){
+	return "Grade Too High!";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw(){
+	return "Grade Too Low!";
+}
 
 void	Bureaucrat::decreaseTheGrade(void){
 	if (grade > 1)

@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 10:02:54 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 10:39:04 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:34:51 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class RobotomyRequestForm : public AForm {
 		const std::string	target;
 
 	public:
+		RobotomyRequestForm(void);
 		RobotomyRequestForm(const std::string &target);
 		RobotomyRequestForm(const RobotomyRequestForm &other);
 		~RobotomyRequestForm();
@@ -30,9 +31,7 @@ class RobotomyRequestForm : public AForm {
 
         class FormNotSignedException : public std::exception {
             public:
-                const char* what() const throw() {
-                    return "Form is not signed.";
-                }
+                const char* what() const throw();
         };
 
 		void execute(const Bureaucrat &executor) const;
