@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:52:31 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 16:40:20 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/22 10:28:30 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,12 @@ const char* AForm::GradeTooHighException::what() const throw(){
 
 const char* AForm::GradeTooLowException::what() const throw(){
 	return "Grade is too low for this form";
+}
+
+std::ostream& operator<<(std::ostream& os, const AForm& form) {
+	os << "Form: " << form.getName() << std::endl;
+	os << "   Signed: " << (form.getIsSigned() ? "Yes" : "No") << std::endl;
+	os << "   Grade to Sign: " << form.getSignGrade() << std::endl;
+	os << "   Grade to Execute: " << form.getExecuteGrade() << std::endl;
+	return os;
 }

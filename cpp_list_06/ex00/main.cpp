@@ -6,11 +6,13 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:56:12 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 13:46:08 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:04:20 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+
 
 int main(int argc, char **argv)
 {
@@ -30,31 +32,9 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-
 	ScalarConverter scalarConverter;
 
 	scalarConverter.convert(argv[1]);
 
 	return (0);
 }
-
-// #include <iostream>
-// #include <sstream>
-// #include <string>
-
-// int main() {
-//     std::string data = "42 3.14 Hello";
-//     std::istringstream iss(data);
-
-//     int num;
-//     double pi;
-//     std::string word;
-
-//     iss >> pi >> pi >> word;
-
-//     std::cout << "Integer: " << num << std::endl;
-//     std::cout << "Double: " << pi << std::endl;
-//     std::cout << "String: " << word << std::endl;
-
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:35:03 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 17:27:36 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/22 10:27:30 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ Form::Form(const Form& other) : name(other.name), signGrade(other.signGrade), ex
 Form::~Form(void){}
 
 void Form::beSigned(const Bureaucrat& bureaucrat) {
-    if (bureaucrat.getGrade() <= signGrade) {
-        isSigned = true;
-    } else {
+	if (bureaucrat.getGrade() <= signGrade) {
+		isSigned = true;
+	} else {
 		isSigned = false;
-        throw GradeTooLowException();
-    }
+		throw GradeTooLowException();
+	}
 }
 
 const std::string&	Form::getName() const{
@@ -69,4 +69,12 @@ const char* Form::GradeTooHighException::what() const throw(){
 
 const char* Form::GradeTooLowException::what() const throw(){
 	return "Grade is too low for this form";
+}
+
+std::ostream& operator<<(std::ostream& os, const Form& form) {
+	os << "Form: " << form.getName() << std::endl;
+	os << "   Signed: " << (form.getIsSigned() ? "Yes" : "No") << std::endl;
+	os << "   Grade to Sign: " << form.getSignGrade() << std::endl;
+	os << "   Grade to Execute: " << form.getExecuteGrade() << std::endl;
+	return os;
 }

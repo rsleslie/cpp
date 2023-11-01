@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:47:19 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 16:26:17 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:04:07 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,32 @@
 
 Bureaucrat::Bureaucrat(void) : name("") {}
 
-Bureaucrat::Bureaucrat(const std::string n, int g) : name(n){	
-		if (g < 1) {
-			throw GradeTooLowException();
-		} else if (g > 150) {
-			throw GradeTooHighException();
-		}
-		this->grade = g;
+Bureaucrat::Bureaucrat(const std::string n, int g) : name(n){    
+        if (g < 1) {
+            throw GradeTooHighException();
+        } else if (g > 150) {
+            throw GradeTooLowException();
+        }
+        this->grade = g;
 }
+
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {}
 
 Bureaucrat::~Bureaucrat(void){}
 
-void	Bureaucrat::decreaseTheGrade(void){
-	if (grade > 1)
-		grade--;
-	else
-		throw GradeTooLowException();
+void    Bureaucrat::increaseTheGrade(void){
+    if (grade > 1)
+        grade--;
+    else
+        throw GradeTooHighException();
 }
 
-void	Bureaucrat::increaseTheGrade(void){
-	if (grade < 150)
-		grade++;
-	else
-		throw GradeTooHighException();
+void    Bureaucrat::decreaseTheGrade(void){
+    if (grade < 150)
+        grade++;
+    else
+        throw GradeTooLowException();
 }
 
 std::string	Bureaucrat::getName(void) const{

@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 12:12:28 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 13:09:18 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/10/24 18:44:07 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/10/24 18:47:59 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#include "Data.hpp"
 
-# include <iostream>
-# include <sstream>
-# include <string>
-# include <limits>
+Data::Data(void) : value(0){}
 
-class ScalarConverter
-{
-	public:
-		ScalarConverter(void);
-		ScalarConverter(const ScalarConverter& other);
-		~ScalarConverter(void);
+Data::Data(int _value) : value(_value) {}
 
-		ScalarConverter& operator=(const ScalarConverter& other);
-		
-		static void convert(const std::string &input);
-};
+Data::~Data(){}
 
-#endif
+int Data::getValue() const{
+    return value;
+}

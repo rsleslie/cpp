@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 10:03:27 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/21 16:34:41 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:04:50 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	outfile << "      _-_\n"
 			<< "   /~~   ~~\\ \n"
 			<< "/~~         ~~\\\n"
-			<< "{                   }\n"
+			<< "{               }\n"
 			<< " \\  _-     -_  /\n"
 			<< "   ~  \\\\ //  ~\n"
 			<< "_- -  | | _- _\n"
