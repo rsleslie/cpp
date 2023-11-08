@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:07:53 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/11/08 13:01:09 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:37:39 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main() {
 
 	//list
 
-	  try{
+	try{
 		std::cout << blue << "TESTE 2 LIST\t{5, 8, 10, 11, 1} search 8\t->\t" ;
 		
 		std::list<int>::iterator result = easyfind(typeList, 8);

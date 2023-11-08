@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:57:59 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/11/08 13:30:50 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:18:16 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,22 @@ int main() {
 		std::cout << red;
         std::cerr << "Error: " << e.what() << std::endl;
     }
+
+	std::vector<int> v;
+	v.push_back(2);
+	v.push_back(3);
+	v.push_back(5);
+	v.push_back(1);
+	v.push_back(23);
+	
+	Span numbers(10);
+	numbers.addNumber(v.begin(), v.end());
+	
+	std::vector<int> result = numbers.getVector();
+	std::cout << green;
+	for(size_t i = 0; i < result.size(); i++){
+		std::cout << "[ " << result[i] << " ]";
+	}
+	
     return 0;
 }
