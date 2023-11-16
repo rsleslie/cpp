@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 18:44:07 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/25 15:52:50 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/11/10 15:04:28 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/11/16 12:22:39 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef RPN_HPP
+# define RPN_HPP
 
-Data::Data(void) : value(0){}
+#include <stack>
+#include <sstream>
+#include <iostream>
 
-Data::Data(int _value) : value(_value) {}
+class RPN
+{
+	private:
+		std::stack<int> numbers;
 
-Data::~Data(){}
+	public:
+		RPN(void);
+		RPN(const RPN& other);
+		RPN&	operator=(const RPN& other);
+		~RPN();
 
-int Data::getValue() const{
-    return value;
-}
+		void	calculator(char *str);
+};
+
+#endif

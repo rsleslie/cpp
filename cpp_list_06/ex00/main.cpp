@@ -6,12 +6,11 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:56:12 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/11/01 14:04:20 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:53:50 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-
 
 
 int main(int argc, char **argv)
@@ -32,9 +31,7 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	ScalarConverter scalarConverter;
-
-	scalarConverter.convert(argv[1]);
+	ScalarConverter::convert(argv[1]);
 
 	return (0);
 }

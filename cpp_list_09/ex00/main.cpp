@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 18:44:07 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/25 15:52:50 by rleslie-         ###   ########.fr       */
+/*   Created: 2023/11/09 14:40:27 by rleslie-          #+#    #+#             */
+/*   Updated: 2023/11/16 11:52:06 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "BitcoinExchange.hpp"
 
-Data::Data(void) : value(0){}
-
-Data::Data(int _value) : value(_value) {}
-
-Data::~Data(){}
-
-int Data::getValue() const{
-    return value;
+int main(int argc, char **argv){
+    if (argc < 2){
+        return (std::cout << "Error: could not open file." << std::endl, 0);
+    }
+    
+    try{
+       BitcoinExchange bitcoin;
+       bitcoin.calculate(argv[1]);
+    }catch(std::exception& e){
+        std::cout << e.what() << std::endl;
+    }
+    return (0);
 }

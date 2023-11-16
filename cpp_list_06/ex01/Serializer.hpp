@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:37:26 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/24 19:22:56 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:51:35 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 class Serializer
 {
-	public:
 		Serializer(void);
+	public:
 		~Serializer(void);
 		
 		static uintptr_t serialize(Data* ptr);

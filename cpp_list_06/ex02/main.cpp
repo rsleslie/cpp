@@ -6,7 +6,7 @@
 /*   By: rleslie- <rleslie-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:46:19 by rleslie-          #+#    #+#             */
-/*   Updated: 2023/10/25 13:43:23 by rleslie-         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:49:44 by rleslie-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ void	identify(Base* p){
 }
 
 void	identify(Base& p){
+	Base* isNULL = static_cast<Base*>(&p);
+	
+	if (isNULL == NULL) {
+        std::cout << "Received a null pointer." << std::endl;
+        return ;
+    }
 	try	{
 		A& a = dynamic_cast<A&>(p);
         std::cout << "this reference A" << std::endl;
@@ -70,7 +76,7 @@ void	identify(Base& p){
 int	main(void){
 	std::srand(static_cast<unsigned>(std::time(NULL)));
 	
-	Base* object = generate();
+	Base* object = NULL;
     identify(object);
     identify(*object);
 
